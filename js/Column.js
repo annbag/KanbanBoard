@@ -1,9 +1,7 @@
 	function Column(id, name) {
+		var self = this;
 		this.id = id;
 		this.name = name || 'No name given';
-		var self = this;
-		var cardName;
-
 		this.$element = createColumn();
 
 		function createColumn() {
@@ -17,7 +15,7 @@
 
 			//ADD EVENTS
 			$columnDelete.click(function() {
-		        self.removeColumn();
+		        self.deleteColumn();
 			});
 
 			$columnAddCard.click(function(event) {
@@ -50,17 +48,17 @@
 	}
 
 	Column.prototype = {
-	    addCard: function(card) {
+	    createCard: function(card) {
 	      this.$element.children('ul').append(card.$element);
 	    },
-	    removeColumn: function() {
+	    deleteColumn: function() {
 		    var self = this;
 		    $.ajax({
 		    	url: baseUrl + '/column/' + self.id,
 		    	method: 'DELETE',
 		    	success: function(response){
-		        	self.element.remove();
+		        	self.$element.remove();
      			}
    			});
-   		};
+   		}
 	};

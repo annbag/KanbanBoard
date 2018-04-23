@@ -5,7 +5,7 @@ var myHeaders = {
 };
 
 $.ajaxSetup({
-	headers: myHeaders
+  headers: myHeaders
 });
 
 $.ajax({

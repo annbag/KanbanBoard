@@ -1,4 +1,4 @@
-function Card(id, name)) {
+	function Card(id, name) {
 		var self = this;
 
 	    this.id = id;
@@ -6,22 +6,19 @@ function Card(id, name)) {
 	    this.$element = createCard();
 
 	    function createCard() {
+		    var card = $('<li class="card"></li>');
+		    var cardDeleteBtn = $('<button class="btn-delete">x</button>');
+		    var cardDescription = $('<p class="card-description"></p>');		    
 
-	    	//CREATE BLOCKS
-		    var $card = $('<li>').addClass('card');
-		    var $cardDescription = $('<p>').addClass('card-description').text(self.name);
-		    var $cardDelete = $('<button>').addClass('btn-delete').text('x');		    
-
-		    //BIND TO CLICK EVENT
-			$cardDelete.click(function(){
+		    cardDeleteBtn.click(function(){
 			    self.removeCard();
 			});
 
-			//COMBINE BLOCKS AND RETURN CARD
-			$card.append($cardDelete)
-				.append($cardDescription);
-			return $card;
-	    };
+		    card.append(cardDeleteBtn);
+		    cardDescription.text(self.name);
+		    card.append(cardDescription)
+		    return card;
+		};
 	};
 
     Card.prototype = {
@@ -34,5 +31,5 @@ function Card(id, name)) {
 			    	self.$element.remove();
 			    }
 		    });
-		};
+		}
 	};
