@@ -1,6 +1,42 @@
-body {margin: 0;}
-* {box-sizing: border-box;}
-
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-family: 'Roboto', sans-serif;
+}
+div {
+  text-align: center;
+}
+/* BOARD */
+.board {
+  background-color: #333;
+}
+.board h1 {
+  padding-top: 30px;
+  color: #bbb;
+  font-size: 40px;
+  text-transform: uppercase;
+}
+button.create-column {
+  margin-top: 30px;  
+  border: none;
+  padding: 15px 30px;  
+  box-shadow: 0 0 0 3px #333, 0 0 0 6px #007fc1; 
+  font-size: 20px;
+  color: #fff;
+  background-color: #007fc1;
+  border-radius: 8px;
+  letter-spacing: 1px;
+  font-weight: 700;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.create-column:hover {
+   box-shadow: 0 0 0 6px #333, 0 0 0 12px #007fc1;
+}
 .ui-sortable {
   min-height: 80px;
 }
@@ -8,32 +44,40 @@ body {margin: 0;}
   position: absolute;
   right: 0;
   top: 0;
-  width: 22px;
-  height: 22px;
-  border: 0;
+  width: 20px;
+  height: 20px;
+  border: 1px solid #333;
+  margin: 10px;
   background-color: rgba(0,0,0,0.4);
   color: white;
+  cursor: pointer;
 }
-/* BOARD */
-.board h1 {
-  margin-left: 8px;
+.btn-delete:hover {
+  background-color: rgba(0,0,0,0.5);
 }
 .column-container {
+  margin-top: 30px;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
 }
 
-
 /* COLUMN */
+
 .column {
   order: 1;
   min-width: 300px;
   min-height: 50vh;
   background-color: lightgrey;
-  margin-left: 8px;
+  margin: 5vh;
   list-style: none;
   position: relative;
+  box-shadow: 15px 15px 10px #111;
+}
+.column-title {
+  color: #fff;
+  text-transform: uppercase;
+  margin: 10px 0;
 }
 .column-add-card {
   cursor: pointer;
@@ -41,14 +85,33 @@ body {margin: 0;}
   margin: 5px 8px;
   display: block;
 }
+button.add-card {
+  margin-top: 10px;  
+  border: none;
+  padding: 10px 20px; 
+  box-shadow: 0 0 0 2px #eee, 0 0 0 4px #33b8ff; 
+  font-size: 18px;
+  color: #fff;
+  background-color:#33b8ff;  
+  letter-spacing: 1px;
+  font-weight: 700;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.add-card:hover  {
+  box-shadow: 0 0 0 4px #eee, 0 0 0 8px #33b8ff;
+}
 
-/* STYLE KARTY */
+/* CARD STYLE */
 .card {
-  box-sizing: border-box;
   display: block;
-  height: 60px;
-  margin-bottom: 5px;
-  padding: 4px;
+  min-height: 40px;
+  margin: 20px;
+  padding: 5px;
+  border: 1px solid #222;
+  box-shadow: 5px 5px 5px #222;
+  background-color: #eee;
   overflow: hidden;
   position: relative;
 }
@@ -58,7 +121,7 @@ body {margin: 0;}
   padding: 0px;
 }
 .card-description {
-  margin: 2px 0;
+  margin: 4px 0;
 }
 .card-placeholder {
   box-sizing: border-box;

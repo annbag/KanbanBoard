@@ -29,6 +29,3 @@
 	    placeholder: 'card-placeholder'
 	  }).disableSelection();
 	}
-	
-
-
