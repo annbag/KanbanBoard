@@ -59,7 +59,7 @@ button.create-column {
   margin-top: 30px;
   display: flex;
   flex-direction: row;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
 }
 
 /* COLUMN */
