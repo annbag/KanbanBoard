@@ -74,6 +74,29 @@ button.create-column {
   position: relative;
   box-shadow: 15px 15px 10px #111;
 }
+@media(max-width: 1024px) and (orientation: portrait) {
+  .column {
+    min-height: 30vh;
+  }
+}
+@media(max-width: 823px) and (orientation: landscape) {
+  .column {
+    min-height: 80vh;
+  }
+}
+@media(max-width: 414px) and (orientation: portrait) {
+  .column {
+    min-height: 50vh;
+  }
+}
+@media(max-width: 320px) and (orientation: portrait) {
+  .column {
+    min-width: 260px;
+  }
+  .board h1 {
+    font-size: 30px;
+  }
+}
 .column-title {
   color: #fff;
   text-transform: uppercase;
